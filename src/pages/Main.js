@@ -1,8 +1,8 @@
 import React from 'react';
-import{View, Text} from 'react-native';
+import{ StyleSheet, View, Text} from 'react-native';
 
-export default function Main(){
+export default function Main(){ //Todo text é text, não tendo mudança de importância 
     return <View>
-        <Text>Pagina de likes dos clientes</Text>
+        <Text>Hello World!</Text> 
     </View>
 }
