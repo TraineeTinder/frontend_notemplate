@@ -5,9 +5,7 @@ export default function ProfileCLient({navigation}){
     return(
             <SafeAreaView style={styles.container}>
                 <View style={styles.geral}>
-                    <Text onPress={() => navigation.navigate('Inicio')}
-                        style={styles.alert}Profile Screen>
-                    </Text>
+                    <Text >Futura tela de perfil do usuario...</Text>
                 </View>
             </SafeAreaView>
     );

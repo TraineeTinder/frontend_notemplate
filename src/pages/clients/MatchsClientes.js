@@ -5,9 +5,7 @@ export default function MatchsCLient({navigation}){
     return(
             <SafeAreaView style={styles.container}>
                 <View style={styles.geral}>
-                    <Text onPress={() => navigation.navigate('Inicio')}
-                        style={styles.alert}Matchs Screen>
-                    </Text>
+                    <Text>Futura tela de matchs...</Text>
                 </View>
             </SafeAreaView>
     );

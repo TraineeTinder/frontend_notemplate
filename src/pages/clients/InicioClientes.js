@@ -1,18 +1,6 @@
 import React from 'react';
 import{SafeAreaView,View,Image, Text, StyleSheet} from 'react-native';
 import teste from '../../../assets/teste.png';
-import {NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons'
-
-import MatchsCLient from './MatchsClientes';
-import ProfileCLient from './PerfilClientes';
-
-const home = 'Home';
-const matchs = 'Matchs';
-const profile = 'Profile';
-
-const Tab = createBottomTabNavigator();
 
 
 export default function InicioClientes({navigation}){
@@ -27,32 +15,6 @@ export default function InicioClientes({navigation}){
                 </View>
             </View>
         </View>
-        <NavigationContainer independent={true}>
-            <Tab.Navigator 
-                initialRouteName={home}
-                screenOptions={({route}) => ({
-                    tabBarIcon: ({focused, color, size}) => {
-                        let iconName;
-                        let routeName = route.name;
-                        if (routeName === home){
-                            iconName = focused ? 'home': 'home-outline';
-
-                        }else if (routeName === matchs){
-                            iconName = focused ? 'list': 'list-outline';
-
-                        }else if (routeName === profile){
-                            iconName = focused ? 'settings': 'settings-outline';
-
-                        }
-                        return <Ionicons name={iconName} size={size} colo={color}/>
-                    },
-
-                })}>
-                    <Tab.Screen name={home} component ={InicioClientes}/>
-                    <Tab.Screen name={matchs} component ={MatchsCLient}/>
-                    <Tab.Screen name={profile} component ={ProfileCLient}/>
-            </Tab.Navigator>
-        </NavigationContainer>
     </SafeAreaView>
     );r
 }
