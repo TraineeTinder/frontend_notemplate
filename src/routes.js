@@ -5,6 +5,7 @@ import CadastroCliente from './pages/clients/CadastroClinte';
 import MatchsCLient from "./pages/clients/MatchsClientes";
 import ProfileCLient from "./pages/clients/PerfilClientes";
 import NavBar from "./pages/clients/NavBar";
+
 const Routes = createAppContainer(
     createSwitchNavigator({
         NavBar,
