@@ -46,7 +46,23 @@ const styles = StyleSheet.create({
     }, 
     avatar:{
         flex: 1,
-        height: 200,
+        height: 300,
+    },
+    footer: {
+        backgroundColor: '#FFF',
+        paddingHorizontal: 20,
+        paddingVertical: 15
+    },
+    name:{
+        fontSize: 26,
+        fontWeight: 'bold',
+        color: '#000'
+    },
+    bio:{
+        fontSize: 14,
+        color: '#999',
+        marginTop: 5,
+        lineHeight: 18
     }
 
 })
