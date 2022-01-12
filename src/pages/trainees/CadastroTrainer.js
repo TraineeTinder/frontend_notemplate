@@ -1,15 +1,10 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, KeyboardAvoidingView, Platform, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
-export default function CadastroCliente() {
-    return <View style={styles.container}>
-        <Text style={styles.titulo}>CADASTRO COMO CLIENTE</Text>
-
-        <View>
-            <TouchableOpacity style={styles.button2}> // botão leva para a tela de cadastro de trainee
-                <Text style={styles.buttonText}>Ir para cadastro de trainee</Text>
-            </TouchableOpacity>
-        </View>
+export default function CadastroTrainer() {
+    return( 
+    <KeyboardAvoidingView enable={Platform == 'ios'} behavior='padding' style={styles.container}>
+        <Text style={styles.titulo}>CADASTRO</Text>
 
         <View style={styles.form}>
             <Text style={styles.label}>*NOME DE USUÁRIO: </Text>
@@ -23,7 +18,7 @@ export default function CadastroCliente() {
             <Text style={styles.label}>*EMAIL: </Text>
             <TextInput
                 style={styles.input}
-                placeholder='example@xmail.com.br'
+                placeholder='seu nome de usuario'
                 placeholderTextColor = "#999"
                 keyboardType='email-address'
                 autoCorrect={false}
@@ -46,10 +41,11 @@ export default function CadastroCliente() {
                 autoCapitalize='none'
                 />
             <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Cadastrar</Text>
+                <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
         </View>
-    </View>
+    </KeyboardAvoidingView>
+    );
 }
 
 const styles = StyleSheet.create({
@@ -58,7 +54,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: 30,
+        fontSize: 32,
     },
 
     container: {
@@ -102,13 +98,5 @@ const styles = StyleSheet.create({
         color: '#FFF',
         fontWeight: 'bold',
         fontSize: 16,
-    },
-
-    button2:{
-        height: 42,
-        backgroundColor: '#FF0000',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 2,
     }
 });

@@ -1,13 +1,13 @@
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
-import Main from './pages/Main';
-import CadastroTrainer from './pages/CadastroTrainer';
-import CadastroCliente from './pages/CadastroClinte';
+import InicioClientes from './pages/clients/InicioClientes';
+import CadastroTrainer from './pages/trainees/CadastroTrainer';
+import CadastroCliente from './pages/clients/CadastroClinte';
 
 const Routes = createAppContainer(
     createSwitchNavigator({
-        CadastroTrainer,
-        CadastroCliente,
-        Main//pagina de likes de clientes
+        InicioClientes,
+        CadastroCliente,       
+        CadastroTrainer, 
     })
 );
 
