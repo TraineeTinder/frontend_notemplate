@@ -2,49 +2,50 @@ import React from 'react';
 import { View, KeyboardAvoidingView, Platform, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function CadastroTrainer() {
-    return 
-    <KeyboardAvoidingView enable={Platform == 'ios'} behavior='padding' style={styles.container}>
-        <Text style={styles.titulo}>CADASTRO</Text>
+    return (
+        <KeyboardAvoidingView enable={Platform == 'ios'} behavior='padding' style={styles.container}>
+            <Text style={styles.titulo}>CADASTRO</Text>
 
-        <View style={styles.form}>
-            <Text style={styles.label}>*NOME DE USUÁRIO: </Text>
-            <TextInput
-                style={styles.input}
-                placeholder='seu nome de usuario'
-                placeholderTextColor = "#999"
-                autoCorrect={false}
-                autoCapitalize='none'
-            />
-            <Text style={styles.label}>*EMAIL: </Text>
-            <TextInput
-                style={styles.input}
-                placeholder='seu nome de usuario'
-                placeholderTextColor = "#999"
-                keyboardType='email-address'
-                autoCorrect={false}
-                autoCapitalize='none'
+            <View style={styles.form}>
+                <Text style={styles.label}>*NOME DE USUÁRIO: </Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder='seu nome de usuario'
+                    placeholderTextColor = "#999"
+                    autoCorrect={false}
+                    autoCapitalize='none'
                 />
-            <Text style={styles.label}>*SENHA: </Text>
-            <TextInput
-                style={styles.input}
-                placeholder='seu nome de usuario'
-                placeholderTextColor = "#999"
-                autoCorrect={false}
-                autoCapitalize='none'
-                />
-            <Text style={styles.label}>*CONFIRMAR SENHA: </Text>
-            <TextInput
-                style={styles.input}
-                placeholder='seu nome de usuario'
-                placeholderTextColor = "#999"
-                autoCorrect={false}
-                autoCapitalize='none'
-                />
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Entrar</Text>
-            </TouchableOpacity>
-        </View>
-    </KeyboardAvoidingView>
+                <Text style={styles.label}>*EMAIL: </Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder='seu nome de usuario'
+                    placeholderTextColor = "#999"
+                    keyboardType='email-address'
+                    autoCorrect={false}
+                    autoCapitalize='none'
+                    />
+                <Text style={styles.label}>*SENHA: </Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder='seu nome de usuario'
+                    placeholderTextColor = "#999"
+                    autoCorrect={false}
+                    autoCapitalize='none'
+                    />
+                <Text style={styles.label}>*CONFIRMAR SENHA: </Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder='seu nome de usuario'
+                    placeholderTextColor = "#999"
+                    autoCorrect={false}
+                    autoCapitalize='none'
+                    />
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.buttonText}>Entrar</Text>
+                </TouchableOpacity>
+            </View>
+        </KeyboardAvoidingView>
+    )
 }
 
 const styles = StyleSheet.create({
