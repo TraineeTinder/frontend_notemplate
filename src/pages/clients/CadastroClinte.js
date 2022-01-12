@@ -2,54 +2,56 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function CadastroCliente() {
-    return <View style={styles.container}>
-        <Text style={styles.titulo}>CADASTRO COMO CLIENTE</Text>
+    return( 
+            <View style={styles.container}>
+                <Text style={styles.titulo}>CADASTRO COMO CLIENTE</Text>
 
-        <View>
-            <TouchableOpacity style={styles.button2}> // botão leva para a tela de cadastro de trainee
-                <Text style={styles.buttonText}>Ir para cadastro de trainee</Text>
-            </TouchableOpacity>
-        </View>
+                <View>
+                    <TouchableOpacity style={styles.button2}> 
+                        <Text style={styles.buttonText}>Ir para cadastro de trainee</Text>
+                    </TouchableOpacity>
+                </View>
 
-        <View style={styles.form}>
-            <Text style={styles.label}>*NOME DE USUÁRIO: </Text>
-            <TextInput
-                style={styles.input}
-                placeholder='seu nome de usuario'
-                placeholderTextColor = "#999"
-                autoCorrect={false}
-                autoCapitalize='none'
-            />
-            <Text style={styles.label}>*EMAIL: </Text>
-            <TextInput
-                style={styles.input}
-                placeholder='example@xmail.com.br'
-                placeholderTextColor = "#999"
-                keyboardType='email-address'
-                autoCorrect={false}
-                autoCapitalize='none'
-                />
-            <Text style={styles.label}>*SENHA: </Text>
-            <TextInput
-                style={styles.input}
-                placeholder='seu nome de usuario'
-                placeholderTextColor = "#999"
-                autoCorrect={false}
-                autoCapitalize='none'
-                />
-            <Text style={styles.label}>*CONFIRMAR SENHA: </Text>
-            <TextInput
-                style={styles.input}
-                placeholder='seu nome de usuario'
-                placeholderTextColor = "#999"
-                autoCorrect={false}
-                autoCapitalize='none'
-                />
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Cadastrar</Text>
-            </TouchableOpacity>
-        </View>
-    </View>
+                <View style={styles.form}>
+                    <Text style={styles.label}>*NOME DE USUÁRIO: </Text>
+                    <TextInput
+                        style={styles.input}
+                        placeholder='seu nome de usuario'
+                        placeholderTextColor = "#999"
+                        autoCorrect={false}
+                        autoCapitalize='none'
+                    />
+                    <Text style={styles.label}>*EMAIL: </Text>
+                    <TextInput
+                        style={styles.input}
+                        placeholder='example@xmail.com.br'
+                        placeholderTextColor = "#999"
+                        keyboardType='email-address'
+                        autoCorrect={false}
+                        autoCapitalize='none'
+                        />
+                    <Text style={styles.label}>*SENHA: </Text>
+                    <TextInput
+                        style={styles.input}
+                        placeholder='seu nome de usuario'
+                        placeholderTextColor = "#999"
+                        autoCorrect={false}
+                        autoCapitalize='none'
+                        />
+                    <Text style={styles.label}>*CONFIRMAR SENHA: </Text>
+                    <TextInput
+                        style={styles.input}
+                        placeholder='seu nome de usuario'
+                        placeholderTextColor = "#999"
+                        autoCorrect={false}
+                        autoCapitalize='none'
+                        />
+                    <TouchableOpacity style={styles.button}>
+                        <Text style={styles.buttonText}>Cadastrar</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+    );
 }
 
 const styles = StyleSheet.create({
