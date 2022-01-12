@@ -6,23 +6,14 @@ export default function CadastroTrainer() {
     <KeyboardAvoidingView enable={Platform == 'ios'} behavior='padding' style={styles.container}>
         <Text style={styles.titulo}>CADASTRO</Text>
 
-        <View style={styles.form}>
-            <Text style={styles.label}>*NOME DE USUÁRIO: </Text>
-            <TextInput
-                style={styles.input}
-                placeholder='seu nome de usuario'
-                placeholderTextColor = "#999"
-                autoCorrect={false}
-                autoCapitalize='none'
-            />
-            <Text style={styles.label}>*EMAIL: </Text>
-            <TextInput
-                style={styles.input}
-                placeholder='seu nome de usuario'
-                placeholderTextColor = "#999"
-                keyboardType='email-address'
-                autoCorrect={false}
-                autoCapitalize='none'
+            <View style={styles.form}>
+                <Text style={styles.label}>*NOME DE USUÁRIO: </Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder='seu nome de usuario'
+                    placeholderTextColor = "#999"
+                    autoCorrect={false}
+                    autoCapitalize='none'
                 />
             <Text style={styles.label}>*SENHA: </Text>
             <TextInput
