@@ -1,13 +1,16 @@
 import React from 'react';
-import{SafeAreaView,View,Image, Text, StyleSheet} from 'react-native';
+import{SafeAreaView,View,Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {FontAwesome} from 'react-native-vector-icons';
 import teste from '../../../assets/teste.png';
+
+
 
 
 export default function InicioClientes({navigation}){
     return( 
     <SafeAreaView style={styles.container}>
-        <View style={styles.card}>
-            <View style={styles.Cards}>
+        <View style={styles.Cards}>
+            <View style={styles.ProfileCard}>
                 <Image style={styles.avatar} source={teste}/>
                 <View style={styles.footer}>
                     <Text style={styles.name}>Victor Rocha</Text>
@@ -15,8 +18,19 @@ export default function InicioClientes({navigation}){
                 </View>
             </View>
         </View>
+        <View style={styles.buttonsContainer}>
+            <TouchableOpacity style={styles.buttonDeslike}>
+                <FontAwesome name="times" size={70} color="#F06795"></FontAwesome>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonFilter}>
+                <FontAwesome name="filter" size={40} color="#CDF820"></FontAwesome>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonLike}>
+                <FontAwesome name="check-circle" size={70} color="#1EDF25"></FontAwesome>
+            </TouchableOpacity>
+        </View>
     </SafeAreaView>
-    );r
+    );
 }
 
 const styles = StyleSheet.create({
@@ -26,13 +40,13 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'space-between',
     },
-    Cards:{
+    ProfileCard:{
         flex: 1,
         alignSelf:'stretch',
         justifyContent:'center',
         maxHeight:500
     },
-    card:{
+    Cards:{
         borderWidth: 1,
         borderColor: "#DDD",
         borderRadius: 8,
@@ -62,7 +76,67 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#999',
         marginTop: 5,
-        lineHeight: 18
-    }
-
+        lineHeight: 20
+    },
+    buttonsContainer:{
+        height: 75,
+        flexDirection: 'row',
+        justifyContent:'space-around',
+        alignItems: 'center',
+        right: 15 
+    },
+    buttonDeslike:{
+        width: 90,
+        height: 80,
+        borderRadius: 60,
+        backgroundColor: "#000",
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: 50,
+        marginTop: 1100,
+        elevation: 2,
+        shadowColor: '#F06795',
+        shadowOpacity: 0.05,
+        shadowRadius: 2,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        }
+    },
+    buttonLike:{
+        width: 90,
+        height: 80,
+        borderRadius: 60,
+        backgroundColor: "#000",
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: 50,
+        marginTop: 1100,
+        elevation: 2,
+        shadowColor: '#1EDF25',
+        shadowOpacity: 0.05,
+        shadowRadius: 2,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+            }
+        },
+        buttonFilter:{
+        width: 60,
+        height: 60,
+        borderRadius: 50,
+        backgroundColor: "#000",
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: 50,
+        marginTop: 1200,
+        elevation: 2,
+        shadowColor: '#CDF820',
+        shadowOpacity: 0.05,
+        shadowRadius: 2,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+            }
+        }
 })
