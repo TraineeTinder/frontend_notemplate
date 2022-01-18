@@ -1,13 +1,19 @@
 import React from 'react';
 import { View, KeyboardAvoidingView, Platform, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-export default function CadastroTrainer() {
+import CadastroCliente from '../clients/CadastroClinte';
+
+const Tab = createBottomTabNavigator();
+
+export default function CadastroTrainer({navigation}) {
     return (
         <View style={styles.container}>
             <Text style={styles.titulo}>CADASTRO</Text>
 
             <View style={styles.OpBox}>
-                <TouchableOpacity style={styles.Clientebox}>
+                <TouchableOpacity style={styles.Clientebox} onPress={()=>navigation.navigate('CadastroCliente')}>
                     <Text style={styles.cliente}> Cliente </Text>
                 </TouchableOpacity>
 
@@ -66,6 +72,9 @@ export default function CadastroTrainer() {
                     autoCorrect={false}
                     autoCapitalize='none'
                     />
+
+                <Text style={styles.label}>Foco de treino(selecione 1 ou mais):</Text>
+                
 
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.buttonText}>Entrar</Text>
