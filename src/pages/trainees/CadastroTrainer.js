@@ -1,15 +1,10 @@
 import React from 'react';
-import { View, KeyboardAvoidingView, Platform, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-import CadastroCliente from '../clients/CadastroClinte';
-
-const Tab = createBottomTabNavigator();
+import { ScrollView, SafeAreaView, View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 
 export default function CadastroTrainer({navigation}) {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Text style={styles.titulo}>CADASTRO</Text>
 
             <View style={styles.OpBox}>
@@ -22,7 +17,7 @@ export default function CadastroTrainer({navigation}) {
                 </View>
             </View>
 
-            <View style={styles.form}>
+            <ScrollView style={styles.form}>
                 <Text style={styles.label}>*NOME DE USUÁRIO: </Text>
                 <TextInput
                     style={styles.input}
@@ -61,26 +56,88 @@ export default function CadastroTrainer({navigation}) {
                     />
 
                 <Text style={styles.label}>Foto de Perfil: </Text>
-                <TouchableOpacity style={styles.buttonPic}>
-                    <Text style={styles.buttonTextPic}>Adicionar da Galeria</Text>
+                <TouchableOpacity style={[styles.buttonPic, {flexDirection: 'row'}]}>
+                    <Entypo name="camera" size={20} color="#000"/>
+                    <Text style={styles.buttonTextPic}>  Adicionar da Galeria</Text>
                 </TouchableOpacity>
 
                 <Text style={styles.label}>Sobre mim</Text>
                 <TextInput
-                    style={styles.input}
-                    placeholderTextColor = "#999"
+                    style={{
+                        borderWidth: 1,
+                        borderColor: '#000',
+                        paddingHorizontal: 20,
+                        paddingBottom: 104,
+                        paddingTop: 8,
+                        fontSize: 16,
+                        color: '#444',
+                        width: 312,
+                        marginBottom: 24,
+                        borderRadius: 10,
+                        backgroundColor: '#FAF1F1'
+                    }}
                     autoCorrect={false}
                     autoCapitalize='none'
                     />
 
                 <Text style={styles.label}>Foco de treino(selecione 1 ou mais):</Text>
+                <View style={{flexDirection: 'row'}}>
+                    <TouchableOpacity style={styles.infosTreino1}>
+                        <Text> Cardio </Text>
+                    </TouchableOpacity>
                 
+                    <TouchableOpacity style={styles.infosTreino2}>
+                        <Text> Musculação </Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{flexDirection: 'row'}}>
+                <TouchableOpacity style={styles.infosTreino1}>
+                    <Text> HIIT </Text>
+                </TouchableOpacity>
+            
+                <TouchableOpacity style={styles.infosTreino2}>
+                    <Text> Funcional </Text>
+                </TouchableOpacity>
+                </View>
 
-                <TouchableOpacity style={styles.button}>
+                <Text style={styles.label}>Margem de preço (por dia):</Text>
+                <View style={{flexDirection: 'row'}}>
+                    <TouchableOpacity style={styles.infosPreco1}>
+                        <Text> R$:100 - R$:200 </Text>
+                    </TouchableOpacity>
+                
+                    <TouchableOpacity style={styles.infosPreco2}>
+                        <Text> R$:201 - R$:400 </Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{flexDirection: 'row'}}>
+                <TouchableOpacity style={styles.infosPreco1}>
+                    <Text> R$:401 - R$:600 </Text>
+                </TouchableOpacity>
+            
+                <TouchableOpacity style={styles.infosPreco2}>
+                    <Text> R$:601 - R$:1000 </Text>
+                </TouchableOpacity>
+                </View>
+
+                <Text style={styles.label}>Redes Sociais: </Text>
+                <TextInput
+                    style={styles.input}
+                    autoCorrect={false}
+                    autoCapitalize='none'
+                    />
+                <Text style={styles.label}>WhatsApp: </Text>
+                <TextInput
+                    style={styles.input}
+                    autoCorrect={false}
+                    autoCapitalize='none'
+                    />
+
+                <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('NavBar')}>
                     <Text style={styles.buttonText}>Entrar</Text>
                 </TouchableOpacity>
-            </View>
-        </View>
+            </ScrollView>
+        </SafeAreaView>
     )
 }
 
@@ -137,13 +194,14 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: 64,
     },
 
     form: {
         alignSelf: 'stretch',
         paddingHorizontal: 32,
-        paddingVertical: 16,
         marginTop: 24,
+        marginBottom: 24,
         backgroundColor: '#AEC2DF',
         marginHorizontal: 16,
         borderRadius: 16,
@@ -168,7 +226,7 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        height: 42,
+        height: 48,
         backgroundColor: '#1EDF25',
         justifyContent: 'center',
         alignItems: 'center',
@@ -195,5 +253,47 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         height: 44,
         marginBottom: 24,
+    },
+
+    infosTreino1: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 24,
+        backgroundColor: '#FAF1F1',
+        width: 120,
+        height: 32,
+        marginBottom: 16,
+    },
+    
+    infosTreino2: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 24,
+        backgroundColor: '#FAF1F1',
+        width: 120,
+        height: 32,
+        marginLeft: 32,
+        marginBottom: 16,
+    },
+
+    infosPreco1: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 24,
+        backgroundColor: '#FAF1F1',
+        width: 128,
+        height: 40,
+        marginBottom: 16,
+    },
+    
+    infosPreco2: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 24,
+        backgroundColor: '#FAF1F1',
+        width: 128,
+        height: 40,
+        marginLeft: 32,
+        marginBottom: 16,
     }
 });
