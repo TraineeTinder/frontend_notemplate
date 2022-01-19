@@ -91,13 +91,13 @@ export default function CadastroTrainer({navigation}) {
                     </TouchableOpacity>
                 </View>
                 <View style={{flexDirection: 'row'}}>
-                <TouchableOpacity style={styles.infosTreino1}>
-                    <Text> HIIT </Text>
-                </TouchableOpacity>
-            
-                <TouchableOpacity style={styles.infosTreino2}>
-                    <Text> Funcional </Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.infosTreino1}>
+                        <Text> HIIT </Text>
+                    </TouchableOpacity>
+                
+                    <TouchableOpacity style={styles.infosTreino2}>
+                        <Text> Funcional </Text>
+                    </TouchableOpacity>
                 </View>
 
                 <Text style={styles.label}>Margem de preço (por dia):</Text>
@@ -111,13 +111,13 @@ export default function CadastroTrainer({navigation}) {
                     </TouchableOpacity>
                 </View>
                 <View style={{flexDirection: 'row'}}>
-                <TouchableOpacity style={styles.infosPreco1}>
-                    <Text> R$:401 - R$:600 </Text>
-                </TouchableOpacity>
-            
-                <TouchableOpacity style={styles.infosPreco2}>
-                    <Text> R$:601 - R$:1000 </Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.infosPreco1}>
+                        <Text> R$:401 - R$:600 </Text>
+                    </TouchableOpacity>
+                
+                    <TouchableOpacity style={styles.infosPreco2}>
+                        <Text> R$:601 - R$:1000 </Text>
+                    </TouchableOpacity>
                 </View>
 
                 <Text style={styles.label}>Redes Sociais: </Text>
