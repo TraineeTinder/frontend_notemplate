@@ -17,7 +17,7 @@ export default function InicioClientes({navigation}){
                     <Text sytle={styles.bio}>Ola mundo!!1dsfdsfdsfdsfsadfdsafasdfdasfadsfdsaf</Text>
                 </View>
             </View>
-        </View>
+        </View> 
         <View style={styles.buttonsContainer}>
             <TouchableOpacity style={styles.buttonDeslike}>
                 <FontAwesome name="times" size={70} color="#F06795"></FontAwesome>
