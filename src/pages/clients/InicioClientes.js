@@ -1,6 +1,7 @@
 import React from 'react';
 import{SafeAreaView,View,Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {FontAwesome} from 'react-native-vector-icons';
+import teste1 from '../../../assets/teste1.jpg';
 import teste from '../../../assets/teste.png';
 
 
@@ -13,8 +14,12 @@ export default function InicioClientes({navigation}){
             <View style={styles.ProfileCard}>
                 <Image style={styles.avatar} source={teste}/>
                 <View style={styles.footer}>
-                    <Text style={styles.name}>Victor Rocha</Text>
-                    <Text sytle={styles.bio}>Ola mundo!!1dsfdsfdsfdsfsadfdsafasdfdasfadsfdsaf</Text>
+                    <Text style={styles.name}>Victor</Text>
+                        <View style={styles.buttonbio}>
+                            <Text sytle={styles.infos}>Mais informações</Text>
+                            <Text sytle={styles.arrow}>v</Text>
+                        </View>
+                        <View style = {styles.scrow}> <Text> Olá Mundo! </Text></View>
                 </View>
             </View>
         </View> 
@@ -41,10 +46,14 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
     },
     ProfileCard:{
+        borderWidth: 10,
+        borderColor: "#AEC2DF",
+        borderRadius: 8,
         flex: 1,
         alignSelf:'stretch',
         justifyContent:'center',
-        maxHeight:500
+        maxHeight:480,
+        backgroundColor: "#DDD"
     },
     Cards:{
         borderWidth: 1,
@@ -53,7 +62,7 @@ const styles = StyleSheet.create({
         margin: 8,
         overflow: 'hidden', 
         position: 'absolute',
-        top: 0,
+        top: 10,
         left: 0,
         right: 0,
         bottom: 0
@@ -62,21 +71,25 @@ const styles = StyleSheet.create({
         flex: 1,
         height: 300,
     },
-    footer: {
-        backgroundColor: '#FFF',
-        paddingHorizontal: 20,
-        paddingVertical: 15
+    footer:{
+        backgroundColor: '#AEC2DF',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        alignItems: 'center'
     },
     name:{
         fontSize: 26,
         fontWeight: 'bold',
         color: '#000'
     },
-    bio:{
-        fontSize: 14,
-        color: '#999',
+    buttonbio:{
+        borderWidth: 1,
+        borderColor: "#DDD",
+        borderRadius: 15,
+        backgroundColor: "#DDD",
         marginTop: 5,
-        lineHeight: 20
+        lineHeight: 20,
+        alignItems: 'center'
     },
     buttonsContainer:{
         height: 75,
@@ -87,13 +100,13 @@ const styles = StyleSheet.create({
     },
     buttonDeslike:{
         width: 90,
-        height: 80,
+        height: 90,
         borderRadius: 60,
         backgroundColor: "#000",
         justifyContent: 'center',
         alignItems: 'center',
         marginHorizontal: 50,
-        marginTop: 1100,
+        marginTop: 1050,
         elevation: 2,
         shadowColor: '#F06795',
         shadowOpacity: 0.05,
@@ -105,13 +118,13 @@ const styles = StyleSheet.create({
     },
     buttonLike:{
         width: 90,
-        height: 80,
+        height: 90,
         borderRadius: 60,
         backgroundColor: "#000",
         justifyContent: 'center',
         alignItems: 'center',
         marginHorizontal: 50,
-        marginTop: 1100,
+        marginTop: 1050,
         elevation: 2,
         shadowColor: '#1EDF25',
         shadowOpacity: 0.05,
@@ -129,7 +142,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginHorizontal: 50,
-        marginTop: 1200,
+        marginTop: 1100,
         elevation: 2,
         shadowColor: '#CDF820',
         shadowOpacity: 0.05,
@@ -138,5 +151,8 @@ const styles = StyleSheet.create({
             width: 0,
             height: 2,
             }
+        },
+        scrow: {
+            
         }
 })
