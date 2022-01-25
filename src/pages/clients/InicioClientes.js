@@ -9,7 +9,7 @@ import teste from '../../../assets/teste.png';
 
 export default function InicioClientes({navigation}){
     return( 
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <View style={styles.Cards}>
             <Text style={styles.name}>Victor</Text>
                         <View style={styles.footer}>
@@ -21,6 +21,13 @@ export default function InicioClientes({navigation}){
                                     <Text sytle={styles.infos}>Mais informações</Text>
                                         <Text sytle={styles.arrow}>v</Text>
                                 </View>
+                                <View style = {styles.prices}>
+                                    <Text style={styles.titleprices}>Preço:</Text> 
+                                    <View style={styles.myprice}>
+                                        <Text>Preços....</Text>
+                                    </View>
+                                </View>
+                                
                                 <View style = {styles.bio}>
                                     <Text style={styles.titleBio}>Sobre mim:</Text> 
                                     <Text> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat odio a malesuada venenatis. Vestibulum dignissim rutrum est, at facilisis arcu finibus vitae. Donec varius, leo vel interdum fringilla, nisl turpis placerat est, sed consectetur risus purus vitae elit. Nulla suscipit, elit sed pretium tempor, libero quam lobortis nulla, eu ultricies sapien sem ac augue. Maecenas nec porttitor enim, sed blandit metus. Aenean vel convallis erat, ut dapibus massa. Nam iaculis nibh mi, et sollicitudin nisi pulvinar a. Maecenas tempor nec felis vitae lobortis. Fusce a mi lorem. Sed non sollicitudin enim. Cras tortor magna, imperdiet in vulputate eget, lacinia ac ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis vitae arcu nisl. Nam metus elit, faucibus vel odio nec, finibus scelerisque libero. Sed at enim vitae orci facilisis gravida. </Text>
@@ -39,7 +46,7 @@ export default function InicioClientes({navigation}){
                     <FontAwesome name="check-circle" size={70} color="#1EDF25"></FontAwesome>
                 </TouchableOpacity>
             </View>
-        </View>
+        </SafeAreaView>
     );
 }
 
@@ -48,12 +55,12 @@ const styles = StyleSheet.create({
         flex:1,
         backgroundColor:'#f5f5f5',
         alignItems:'center',
-        justifyContent:'space-between',
+        justifyContent:'space-between'
     },
     ProfileCard:{
-        borderWidth: 10,
-        borderColor: "#AEC2DF",
-        borderRadius: 8,
+        borderWidth: 3,
+        borderColor: "#fff",
+        borderRadius: 20,
         flex: 1,
         alignSelf:'stretch',
         justifyContent:'center',
@@ -79,16 +86,18 @@ const styles = StyleSheet.create({
         flex: 1,
         height: 200,
         borderRadius: 20,
-        borderColor: '#FFFF'
+        borderColor: '#FFFF',
+        borderRadius: 8
     },
     footer:{
-        height: 500,
+        maxHeight:500,
         marginTop: 60,
         backgroundColor: '#AEC2DF',
         paddingHorizontal: 10,
         paddingVertical: 5,
         alignItems: 'center',
-        position: 'absolute'
+        position: 'absolute',
+        borderRadius: 8
     },
     name:{
         fontSize: 30,
@@ -114,12 +123,11 @@ const styles = StyleSheet.create({
         position: 'absolute'
     },
     buttonsContainer:{
-        height: 75,
+        height: 30,
         flexDirection: 'row',
         justifyContent:'space-around',
         alignItems: 'center',
         right: 15,
-        
     },
     buttonDeslike:{
         width: 90,
@@ -137,7 +145,9 @@ const styles = StyleSheet.create({
         shadowOffset: {
             width: 0,
             height: 2,
-        }
+        },
+        borderWidth: 3,
+        borderColor: '#F06795'
     },
     buttonLike:{
         width: 90,
@@ -155,7 +165,9 @@ const styles = StyleSheet.create({
         shadowOffset: {
             width: 0,
             height: 2,
-            }
+            },
+            borderWidth: 3,
+            borderColor: '#1EDF25'
         },
         buttonFilter:{
         width: 60,
@@ -165,7 +177,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginHorizontal: 50,
-        marginTop: 1350,
+        marginTop: 1220,
         elevation: 2,
         shadowColor: '#CDF820',
         shadowOpacity: 0.05,
@@ -173,7 +185,9 @@ const styles = StyleSheet.create({
         shadowOffset: {
             width: 0,
             height: 2,
-            }
+            },
+            borderWidth: 3,
+            borderColor: '#CDF820'
         },
         bio: {
             margin: 20,
@@ -181,11 +195,30 @@ const styles = StyleSheet.create({
             borderColor: "#DDD",
             borderRadius: 15,
             backgroundColor: "#DDD",
+            maxWidth:350 
             
         },
         titleBio:{
             fontWeight: 'bold',
             fontSize: 16,
             textAlign: 'left'
+        },
+        prices:{
+            margin: 20,
+            borderWidth: 1,
+            borderColor: "#DDD",
+            borderRadius: 15,
+            backgroundColor: "#DDD",
+            maxWidth:350 
+        },
+        titleprices:{
+            fontWeight: 'bold',
+            fontSize: 16,
+            textAlign: 'left'
+        },
+        myprice:{
+            alignSelf:'center',
+            borderRadius: 15,
+            backgroundColor: "#fff",
         }
 })
